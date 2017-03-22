@@ -84,5 +84,11 @@ namespace DataAccess
             var collection = MongoDatabase.GetCollection<User>(Collection);
             collection.InsertBatch(users);
         }
+
+        public void UpdateAddressTableInUserObject(User user) // This object should contain few addresses
+        {
+            var collection = MongoDatabase.GetCollection<User>(Collection);
+            collection.Save(user);
+        }
     }
 }
